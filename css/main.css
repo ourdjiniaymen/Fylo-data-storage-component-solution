@@ -187,6 +187,7 @@ body {
 
 .storage .remaining-storage span:last-child {
   color: var(--grayish-blue);
+  font-weight: 700;
 }
 
 .storage p {
