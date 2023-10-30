@@ -1,0 +1,249 @@
+/* Start Globale Variables */
+:root {
+  --rose-bud: hsl(6, 100%, 80%);
+  --brilliant-rose: hsl(335, 100%, 65%);
+  --pale-blue: hsl(243, 100%, 93%);
+  --grayish-blue: hsl(229, 7%, 55%);
+  --dark-blue: hsl(228, 56%, 26%);
+  --very-dark-blue: hsl(229, 57%, 11%);
+}
+/* End Globale Variables */
+
+/* Start Globale rules */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+  font-weight: initial;
+  font-size: initial;
+}
+/* End Globale rules */
+
+/* Start Container */
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Small Screen */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Medium Screen */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large Screen */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* End Container */
+
+/* Start Attribution */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 20px;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+/* End Attribution */
+
+body {
+  background-color: var(--very-dark-blue);
+  background-image: url(../images/bg-mobile.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url(../images/bg-desktop.png);
+    background-position: center bottom;
+    background-size: contain;
+  }
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 30px;
+  height: 100vh;
+}
+
+.files {
+  padding: 30px;
+  background-color: var(--dark-blue);
+  border-radius: 10px 100px 10px 10px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .files {
+    flex-grow: 1;
+    width: initial;
+  }
+}
+
+.files .logo {
+  margin-bottom: 30px;
+}
+
+.files .shortcuts-grid {
+  display: flex;
+  column-gap: 20px;
+}
+
+.files .shortcuts-grid > div {
+  background-color: var(--very-dark-blue);
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.storage {
+  background-color: var(--dark-blue);
+  padding: 30px 30px 100px;
+  width: 100%;
+  border-radius: 10px;
+  color: var(--pale-blue);
+  text-align: center;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .storage {
+    flex-grow: 3;
+    width: initial;
+    text-align: start;
+    padding-bottom: 60px;
+  }
+}
+
+.storage .remaining-storage {
+  position: absolute;
+  padding: 15px;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background-color: #fff;
+  border-radius: 10px;
+}
+@media (min-width: 768px) {
+  .storage .remaining-storage {
+    right: 30px;
+    left: auto;
+    top: 0;
+    bottom: auto;
+    transform: translate(0, -65%);
+    border-bottom-right-radius: 0;
+  }
+  .storage .remaining-storage::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 0px 0 20px;
+    border-color: #fff transparent transparent;
+    bottom: -19px;
+    right: 0;
+  }
+}
+
+.storage .remaining-storage span:first-child {
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--very-dark-blue);
+  margin-right: 5px;
+}
+
+.storage .remaining-storage span:last-child {
+  color: var(--grayish-blue);
+}
+
+.storage p {
+  margin-bottom: 20px;
+}
+
+.storage p .special {
+  font-weight: 700;
+}
+
+.storage .storage-bar {
+  height: 25px;
+  border-radius: 20px;
+  background-color: var(--very-dark-blue);
+  position: relative;
+}
+
+.storage .storage-bar::before {
+  content: "";
+  position: absolute;
+  width: 81.5%;
+  height: 80%;
+  left: 3px;
+  top: 50%;
+  border-radius: 20px;
+  transform: translateY(-50%);
+
+  --rose-bud: hsl(6, 100%, 80%);
+  --brilliant-rose: hsl(335, 100%, 65%);
+  background-image: linear-gradient(
+    90deg,
+    var(--rose-bud),
+    var(--brilliant-rose)
+  );
+}
+
+.storage .storage-bar::after {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  left: calc(81.5% - 13px);
+  top: 50%;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+}
+.storage .storage-bar span {
+  position: absolute;
+  bottom: -30px;
+  font-weight: 700;
+}
+
+.storage .storage-bar span:first-child {
+  left: 0;
+}
+
+.storage .storage-bar span:last-child {
+  right: 0;
+}
