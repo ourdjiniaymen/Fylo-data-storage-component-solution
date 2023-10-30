@@ -72,7 +72,7 @@ h1 {
 }
 /* End Attribution */
 
-body {
+main {
   background-color: var(--very-dark-blue);
   background-image: url(../images/bg-mobile.png);
   background-repeat: no-repeat;
@@ -80,10 +80,10 @@ body {
 }
 
 @media (min-width: 768px) {
-  body {
+  main {
     background-image: url(../images/bg-desktop.png);
-    background-position: center bottom;
-    background-size: contain;
+    background-position: left bottom;
+    background-size: 100% 50%;
   }
 }
 
